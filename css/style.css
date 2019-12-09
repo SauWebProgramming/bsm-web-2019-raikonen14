@@ -1,0 +1,51 @@
+.jumbotron
+{
+    background-image: url("../img/bg.jpg");
+    background-size:cover;
+    height: 100%;
+   
+}
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    margin-bottom: 60px;
+}
+
+
+
+
+.footer {
+  background-color: #f5f5f5;
+  line-height: 60px;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+body > .container{
+    padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+#urunyorum{
+    
+    margin-left: -50px;
+}
+#urunfiyat{
+    font-size: 26px;
+    color:darkolivegreen;
+    
+}
