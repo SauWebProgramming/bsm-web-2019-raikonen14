@@ -1,0 +1,42 @@
+﻿
+@model IEnumerable<E_Ticaret_Süt_Ürünleri.Entity.Katagori>
+@{ 
+    var SelectedCategory = Url.RequestContext.RouteData.Values["id"];
+}
+
+
+
+
+
+
+    <a href="/Home/Liste" class="list-group-item">➥ Tüm Kategoriler</a>
+
+
+
+@foreach (var item in Model)
+{
+    if (SelectedCategory != null)
+    {
+        if (item.Id == int.Parse((SelectedCategory.ToString())))
+        {
+            // seçilen kategori ile route id si birbirine eşit.
+           
+                <a href="/Home/Liste/@item.Id" class="list-group-item active">➥ @item.Isim</a>
+
+        }
+        else
+        {
+            <a href="/Home/Liste/@item.Id" class="list-group-item">➥ @item.Isim</a>
+        }
+    }
+    else
+    {
+        <a href="/Home/Liste/@item.Id" class="list-group-item">➥ @item.Isim</a>
+    }
+
+
+}
+
+
+
+

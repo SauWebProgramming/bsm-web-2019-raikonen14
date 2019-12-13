@@ -1,0 +1,34 @@
+﻿
+@using E_Ticaret_Süt_Ürünleri.Models;
+
+@model IEnumerable<ProductModel>
+
+
+
+
+
+<div class="row">
+
+
+    @foreach (var urun in Model)
+    {
+        <div class="col-md-4  pt-4 mb-4">
+            <div class="card ">
+                <img src="/Upload/@urun.Resim" class="card-img-top" alt="@urun.Isim">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Detay/@urun.Id">@urun.Isim</a>
+                    </h5>
+                    <p class="card-text pt-2">@urun.Aciklama</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted product-price">₺ @urun.Fiyat</small>
+                    <a href="/Home/Detay/@urun.Id" class="btn btn-primary btn-sm float-right">İncele</a>
+                   
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+

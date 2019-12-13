@@ -16,15 +16,51 @@ namespace E_Ticaret_Süt_Ürünleri.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View(_context.Urunler.Where(i => i.Anasayfa && i.Aktif).ToList());
+            var urunler = _context.Urunler
+                .Where(i => i.Anasayfa && i.Aktif)
+                .Select(i => new Models.ProductModel()
+                {
+                    Id = i.Id,
+                    Isim = i.Isim,
+                    Aciklama = i.Aciklama.Length > 50 ? i.Aciklama.Substring(0, 47) + "..." : i.Aciklama,
+                    Fiyat = i.Fiyat,
+                    Stok = i.Stok,
+                    Resim = i.Resim,
+                    KatagoriId = i.KatagoriId
+                }).ToList();
+
+            return View(urunler);
         }
         public ActionResult Detay(int id )
         {
             return View(_context.Urunler.Where(i =>i.Id==id).FirstOrDefault());
         }
-        public ActionResult Liste()
+        public ActionResult Liste(int? id)
         {
-            return View(_context.Urunler.Where(i => i.Aktif).ToList());
+            var urunler = _context.Urunler
+                .Where(i => i.Anasayfa && i.Aktif)
+                .Select(i => new Models.ProductModel()
+                {
+                    Id = i.Id,
+                    Isim = i.Isim,
+                    Aciklama = i.Aciklama.Length > 50 ? i.Aciklama.Substring(0, 47) + "..." : i.Aciklama,
+                    Fiyat = i.Fiyat,
+                    Stok = i.Stok,
+                    Resim = i.Resim,
+                    KatagoriId = i.KatagoriId
+                }).AsQueryable();
+
+            if (id != null)
+            {
+                urunler = urunler.Where(i => i.KatagoriId == id);
+            }
+
+            return View(urunler.ToList());
+        }
+
+        public PartialViewResult GetCategories()
+        {
+            return PartialView(_context.Katagoriler.ToList());
         }
     }
 }

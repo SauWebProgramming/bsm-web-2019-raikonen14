@@ -5,8 +5,26 @@
     height: 100%;
    
 }
+.card-title 
+{
+    font-size:18px;
+    font-weight:400;
+    color:#484848;
+    line-height:1.35em;
+    height:34px;
 
-html{
+}
+.card-text {
+    font-size: 13px;
+}
+.product-price {
+
+    color:#414141;
+    font-weight:700;
+    font-size:17px;
+
+}
+html {
     position: relative;
     min-height: 100%;
 }

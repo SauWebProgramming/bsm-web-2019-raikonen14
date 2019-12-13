@@ -1,6 +1,6 @@
-﻿@using E_Ticaret_Süt_Ürünleri.Entity;
+﻿@using E_Ticaret_Süt_Ürünleri.Models;
 
-@model IEnumerable<Urun>
+@model IEnumerable<ProductModel>
 
 @{
     ViewBag.Title = "Index";
@@ -32,27 +32,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<div class="row">
+<div class="container pb-5">
 
-    
-        @foreach (var urun in Model)
-        {
-            <div class="col-md-4 pt-5 pb-5">
-                <div class="card ">
-                    <img src="/Tema/img/bg.jpg" class="card-img-top" alt="@urun.Isim">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="/Home/Detay/@urun.Id">@urun.Isim</a>
-                        </h5>
-                        <p class="card-text">@urun.Aciklama</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">@urun.Fiyat</small>
-                    </div>
-                </div>
-            </div>
-        }
-           
+    @Html.Partial("_UrunListesi",Model)
+
 </div>
 
    
