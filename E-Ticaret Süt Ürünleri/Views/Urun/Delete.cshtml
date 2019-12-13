@@ -1,0 +1,90 @@
+﻿@model E_Ticaret_Süt_Ürünleri.Entity.Urun
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>Bu Ürünü Silmekte Emin misin?</h2>
+
+   
+    <div>
+        
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Katagori.Isim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Katagori.Isim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Isim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Isim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Resim)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Resim)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Stok)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Stok)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Anasayfa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Anasayfa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Aktif)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Aktif)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger" />
+                @Html.ActionLink("Önceki Sayfa", "Index", null, new { @class = "btn btn-warning" })
+            </div>
+        }
+    </div>
+</div>
