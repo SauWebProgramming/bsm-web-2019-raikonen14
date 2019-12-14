@@ -10,6 +10,7 @@ using E_Ticaret_Süt_Ürünleri.Entity;
 
 namespace E_Ticaret_Süt_Ürünleri.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class UrunController : Controller
     {
         private DataContext db = new DataContext();

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using E_Ticaret_Süt_Ürünleri.Identify;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace E_Ticaret_Süt_Ürünleri.Entity
 {
