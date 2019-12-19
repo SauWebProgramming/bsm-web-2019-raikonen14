@@ -46,6 +46,7 @@ namespace E_Ticaret_Süt_Ürünleri.Identity
                 manager.Create(user, "112233");
                 manager.AddToRole(user.Id, "user");
             }
+         
 
 
             //User

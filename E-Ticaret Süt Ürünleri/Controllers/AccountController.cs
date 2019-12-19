@@ -54,7 +54,7 @@ namespace E_Ticaret_Süt_Ürünleri.Controllers
 
               if (result.Succeeded)
                {
-                    //Kullanıcı oluşturuldu. Bir role atayabilirsiniz.
+                  
                     if (RoleManager.RoleExists("user"))
                     {
                         UserManager.AddToRole(user.Id, "user");
